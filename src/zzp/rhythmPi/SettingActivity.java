@@ -35,8 +35,8 @@ public class SettingActivity extends Activity {
 		seekBar = (SeekBar) findViewById(R.id.volumn_seekBar);
 	}
 	private void showResults() {
-		 seekBar.setMax(10);//设置最大刻度
-	     seekBar.setProgress(5);//设置当前刻度
+		seekBar.setMax(10);//设置最大刻度
+		seekBar.setProgress(MainActivity.sounds);//设置当前刻度
 	 }
 	private void setListensers() 
 	{
@@ -59,6 +59,7 @@ public class SettingActivity extends Activity {
 			  Toast.makeText(SettingActivity.this, "当前音量值： " + seekBar.getProgress(), Toast.LENGTH_SHORT).show();
 			  NetThread netThread = new NetThread(-1, -1, -1, seekBar.getProgress());
 			  netThread.sendVolumn();
+			  MainActivity.sounds = seekBar.getProgress();
 			  SettingActivity.this.finish();
 		 }
 	 }; 
