@@ -4,7 +4,7 @@
     <string name="app_name">RhythmPi</string>
     <string name="action_about">关于</string>
     <string name="action_settings">设置</string>
-    <string name="action_relogin">重新登录</string>
+    <string name="action_relogin">登出</string>
     <string name="action_logout">退出</string>
     <string name="title_section1">Classic</string>
     <string name="title_section2">Techno</string>

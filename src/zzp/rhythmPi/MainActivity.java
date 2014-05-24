@@ -199,12 +199,12 @@ public class MainActivity extends FragmentActivity {
 	
 		switch (keyCode) {
 			case KeyEvent.KEYCODE_VOLUME_DOWN:
-				//Toast.makeText (this, "当前音量值： " + sounds, Toast.LENGTH_SHORT).show();
+				Toast.makeText (this, "当前音量值： " + sounds, Toast.LENGTH_SHORT).show();
 				if (sounds > 0)
 					sounds--;
 				return true;
 			case KeyEvent.KEYCODE_VOLUME_UP:
-				//Toast.makeText (this, "当前音量值： " + sounds, Toast.LENGTH_SHORT).show();
+				Toast.makeText (this, "当前音量值： " + sounds, Toast.LENGTH_SHORT).show();
 				if (sounds < 10)
 					sounds++;
 				return true;
