@@ -85,7 +85,7 @@ public class MainFragment extends Fragment {
 					{
 						if (v.getId() == buttonId[i])
 						{
-							NetThread netThread = new NetThread(-1, type, i, -1);
+							NetThread netThread = new NetThread(null, type, i, -1);
 							netThread.sendButton();
 							break;
 						}

@@ -57,7 +57,7 @@ public class SettingActivity extends Activity {
 		  public void onClick(View v)
 		 {
 			  Toast.makeText(SettingActivity.this, "当前音量值： " + seekBar.getProgress(), Toast.LENGTH_SHORT).show();
-			  NetThread netThread = new NetThread(-1, -1, -1, seekBar.getProgress());
+			  NetThread netThread = new NetThread(null, -1, -1, seekBar.getProgress());
 			  netThread.sendVolumn();
 			  MainActivity.sounds = seekBar.getProgress();
 			  SettingActivity.this.finish();

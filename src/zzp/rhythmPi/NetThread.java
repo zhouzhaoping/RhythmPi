@@ -13,7 +13,7 @@ import android.util.Log;
 
 public class NetThread{
 	
-	int password;
+	String password;
 	int type;
 	int buttonId;
 	int volumn;
@@ -22,7 +22,7 @@ public class NetThread{
 	String requestString;
 	String retSrc;
 	
-	NetThread(int _password, int _type, int _buttonId, int _volumn){
+	NetThread(String _password, int _type, int _buttonId, int _volumn){
 		password = _password;
 		type = _type;
 		buttonId = _buttonId;
@@ -31,7 +31,7 @@ public class NetThread{
 	
 	public void sendButton(){
 		try{
-			requestString = url + "?type=" + type + "&" + "id=" + buttonId;
+			requestString = url + "?action=sound&type=" + (type + 1) + "&row=" + (buttonId / 3 + 1) + "&col=" + (buttonId % 3 + 1);
 			Thread t = new Thread(connect);
 			t.start();
 		} catch (Exception e) {
@@ -41,7 +41,7 @@ public class NetThread{
 	
 	public void sendVolumn(){
 		try{
-			requestString = url + "?volum=" + volumn;
+			requestString = url + "?action=volumn&volumn=" + volumn;
 			Thread t = new Thread(connect);
 			t.start();
 		} catch (Exception e) {
@@ -51,14 +51,14 @@ public class NetThread{
 	
 	public boolean sendPassword(){
 		try{
-			requestString = url + "?password=" + password;
+			requestString = url + "?action=validate&password=" + password;
 			Thread t = new Thread(connect2);
 			t.start();
-			t.join();
+			//t.join();
 		} catch (Exception e) {
             e.printStackTrace();
         }
-		if (retSrc.equals("yes"))
+		if (retSrc != null && retSrc.equals("yes"))
 			return true;
 		return false;
 	}
@@ -90,6 +90,7 @@ public class NetThread{
 				// 发送请求
 				HttpResponse httpResponse = client.execute(request);
 				retSrc = EntityUtils.toString(httpResponse.getEntity());
+				Log.d("receive", retSrc);
 			} catch (Exception e) {
                 //Toast.makeText(MainFrame.this,"无法链接网络！", 1).show();
                 e.printStackTrace();

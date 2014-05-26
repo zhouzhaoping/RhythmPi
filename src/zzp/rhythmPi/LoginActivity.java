@@ -43,33 +43,57 @@ public class LoginActivity extends Activity {
 	 {
 		  public void onClick(View v)
 		 {
-			  //String username = view_username.getText().toString();
-			  //String password = view_password.getText().toString();
-			  String username = "162.105.171.246";
-			  String password = "123456";
+			  String username = view_username.getText().toString();
+			  String password = view_password.getText().toString();
+			  username = "162.105.171.3";
+			  password = "123456";
+			  NetThread.url = "http://" + username + "/cgi-bin/handler.py";
+			  //NetThread netThread = new NetThread(password, -1, -1, -1);
+			  Intent intent = new Intent();
+			  intent.setClass(LoginActivity.this, MainActivity.class);
+			  Bundle bundle = new Bundle();
+			  bundle.putString("KEY_USERNAME", username);
+			  bundle.putString("KEY_PASSWORD", password);
+			  intent.putExtras(bundle);
+			  startActivity(intent);
+			  Toast.makeText(LoginActivity.this, "登录成功！", 
+		                 Toast.LENGTH_SHORT).show(); 
+			  LoginActivity.this.finish();
+			  /*
+			  if (netThread.sendPassword())
+			  {
+			   		Intent intent = new Intent();
+					  intent.setClass(LoginActivity.this, MainActivity.class);
+					  Bundle bundle = new Bundle();
+					  bundle.putString("KEY_USERNAME", username);
+					  bundle.putString("KEY_PASSWORD", password);
+					  intent.putExtras(bundle);
+					  startActivity(intent);
+					  Toast.makeText(LoginActivity.this, "登录成功！", 
+				                 Toast.LENGTH_SHORT).show(); 
+					  LoginActivity.this.finish();
+			  } else {
+				  NetThread.url = "http://162.105.171.246/cgi-bin/handler.py";
+				  Intent intent = new Intent();
+				  intent.setClass(LoginActivity.this, MainActivity.class);
+				  Bundle bundle = new Bundle();
+				  bundle.putString("KEY_USERNAME", username);
+				  bundle.putString("KEY_PASSWORD", password);
+				  intent.putExtras(bundle);
+				  startActivity(intent);
+				  
+				  Toast.makeText(LoginActivity.this, "IP地址或密码错误！", 
+			                 Toast.LENGTH_SHORT).show(); 
+				  LoginActivity.this.finish();
+			  }*/
+			  /*
 			  if (username.equals("") || password.equals(""))
 			  {
 				  Toast.makeText(LoginActivity.this, "IP地址或密码不能为空！", 
 			                 Toast.LENGTH_SHORT).show(); 
 			  }
 			  else if (username.equals("162.105.171.246") && password.equals("123456"))
-			  { // 验证..应该发送一个请求才对
-				  /*
-				   NetThread.url = "http://" + username + "/handler.py";
-				   NetThread netThread = new NetThread(password, -1, -1, -1);
-				   if (netThread.sendPassword())
-				   {
-				   		Intent intent = new Intent();
-						  intent.setClass(LoginActivity.this, MainActivity.class);
-						  Bundle bundle = new Bundle();
-						  bundle.putString("KEY_USERNAME", username);
-						  bundle.putString("KEY_PASSWORD", password);
-						  intent.putExtras(bundle);
-						  startActivity(intent);
-						  LoginActivity.this.finish();
-				   }
-				   
-				   */
+			{
 				// Close this Activity
 				  Intent intent = new Intent();
 				  intent.setClass(LoginActivity.this, MainActivity.class);
@@ -83,6 +107,7 @@ public class LoginActivity extends Activity {
 				  Toast.makeText(LoginActivity.this, "IP地址或密码错误！", 
 			                 Toast.LENGTH_SHORT).show(); 
 			  }
+			  */
 		 }
 	 }; 
 }

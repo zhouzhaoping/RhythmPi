@@ -201,12 +201,20 @@ public class MainActivity extends FragmentActivity {
 			case KeyEvent.KEYCODE_VOLUME_DOWN:
 				Toast.makeText (this, "当前音量值： " + sounds, Toast.LENGTH_SHORT).show();
 				if (sounds > 0)
+				{
 					sounds--;
+					NetThread netThread = new NetThread(null, -1, -1, sounds);
+					  netThread.sendVolumn();
+				}
 				return true;
 			case KeyEvent.KEYCODE_VOLUME_UP:
 				Toast.makeText (this, "当前音量值： " + sounds, Toast.LENGTH_SHORT).show();
 				if (sounds < 10)
+				{
 					sounds++;
+					 NetThread netThread = new NetThread(null, -1, -1, sounds);
+					  netThread.sendVolumn();
+				}
 				return true;
 		}
 		return super.onKeyDown (keyCode, event);

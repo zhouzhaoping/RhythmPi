@@ -99,14 +99,14 @@ public class AboutActivity extends ListActivity {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("person_name", "赵天雨");
 		map.put("person_id", "1100012***");
-		map.put("person_introduction", "项目管理老大：知名独立音乐人，信科著名球星");
+		map.put("person_introduction", "项目管理老大，脚本编写：知名独立音乐人，信科著名球星");
 		map.put("person_profile", R.drawable.member1);
 		list.add(map);
 
 		map = new HashMap<String, Object>();
 		map.put("person_name", "张高翔");
 		map.put("person_id", "1100012***");
-		map.put("person_introduction", "UI设计，网站开发：");
+		map.put("person_introduction", "UI设计，网站开发：三国杀大神");
 		map.put("person_profile", R.drawable.member2);
 		list.add(map);
 
