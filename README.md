@@ -1,5 +1,6 @@
-#<center>![logo pic](https://raw.githubusercontent.com/zhouzhaoping/RhythmPi/master/res/drawable-xxhdpi/ic_launcher.png)
-#<center>![logo pic](https://raw.githubusercontent.com/zhouzhaoping/RhythmPi/master/res/drawable-mdpi/back0.png)</center>
+<center>![logo pic](https://raw.githubusercontent.com/zhouzhaoping/RhythmPi/master/res/drawable-xxhdpi/ic_launcher.png)
+<center>![logo pic](https://raw.githubusercontent.com/zhouzhaoping/RhythmPi/master/res/drawable-mdpi/back0.png)
+
 ##0.简介
 **这个是[RhythmPi](http://i.pku.edu.cn/trac/rhythmpi)项目的android部分** 
 
