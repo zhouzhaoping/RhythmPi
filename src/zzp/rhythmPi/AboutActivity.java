@@ -5,23 +5,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import zzp.rhythmPi.R;
-
-
 import android.app.ListActivity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnCreateContextMenuListener;
-import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
 
 public class AboutActivity extends ListActivity {
 

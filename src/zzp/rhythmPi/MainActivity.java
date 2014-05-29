@@ -1,31 +1,18 @@
 package zzp.rhythmPi;
 
-import java.util.Locale;
-
 import zzp.rhythmPi.R;
 
 
 import android.content.Intent;
-import android.media.AudioManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.GridLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity {
@@ -66,7 +53,7 @@ public class MainActivity extends FragmentActivity {
 	 private void showResults() {
 		 Bundle bunde = this.getIntent().getExtras();
 		 String username = bunde.getString("KEY_USERNAME");
-		 String password = bunde.getString("KEY_PASSWORD");
+		 //String password = bunde.getString("KEY_PASSWORD");
 		 //NetThread.url = "http://" + username + "/handler.py";
 		 String welcome = "欢迎来到RhythmyPi(" + username + ")的音乐世界！"; 
 		 Toast.makeText(MainActivity.this, welcome, 
@@ -164,7 +151,7 @@ public class MainActivity extends FragmentActivity {
 
 		@Override
 		public CharSequence getPageTitle(int position) {
-			Locale l = Locale.getDefault();
+			//Locale l = Locale.getDefault();
 			switch (position) {
 			case 0:
 				return getString(R.string.title_section1);
